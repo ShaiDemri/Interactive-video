@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(5),
     position: "absolute",
-    zIndex: 99999999999999,
+    zIndex: 10,
     bottom: "1%",
     left: "30%",
     background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",

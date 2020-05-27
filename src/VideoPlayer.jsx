@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     position: "relative",
     height: "100%",
-    // paddingTop: "56.25%" /* 9 / 16 = 0.5625 */,
   },
   player: {
     position: "absolute",
