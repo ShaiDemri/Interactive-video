@@ -19,7 +19,7 @@ const FullScreen = ({ children }) => {
     if (fullscreenElement) {
       //exitFullscreen();
     } else {
-      launchIntoFullscreen(document.getElementById("root"));
+      launchIntoFullscreen(document.getElementById("fullscreen"));
     }
   }
   // From https://davidwalsh.name/fullscreen
