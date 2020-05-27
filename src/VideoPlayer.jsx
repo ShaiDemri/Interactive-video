@@ -11,7 +11,8 @@ import OverlayButton from "./OverlayButton";
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "relative",
-    paddingTop: "56.25%" /* 9 / 16 = 0.5625 */,
+    height: "100%",
+    // paddingTop: "56.25%" /* 9 / 16 = 0.5625 */,
   },
   player: {
     position: "absolute",
@@ -21,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
   },
 }));
+const startTrackingPixel = "http://www.mocky.io/v2/5be098b232000072006496f5";
+const endTrackingPixel = "http://www.mocky.io/v2/5be098d03200004d006496f6";
+
 const androidURI =
   "https://play.google.com/store/apps/details?id=com.huuuge.casino.texas&hl=en";
 const iosURI =
@@ -33,6 +37,9 @@ export default function VideoPlayer() {
   };
   const pause = () => {
     setIsPlaying(false);
+  };
+  const fireTrackingPixel = (url) => {
+    fetch(url);
   };
 
   const [timeElapsed, setTimeElapsed] = React.useState(0);
@@ -51,7 +58,7 @@ export default function VideoPlayer() {
   let timer = React.useRef();
   const handleTimeJump = React.useCallback(() => {
     clearTimeout(timer.current);
-    timer.current = setTimeout(handleInactivityCb, 10000); // TODO: W8 10 sec
+    timer.current = setTimeout(handleInactivityCb, 10000);
   }, [handleInactivityCb]);
 
   React.useEffect(() => {
@@ -73,7 +80,13 @@ export default function VideoPlayer() {
         ref={vidRef}
         volume={0.01}
         playing={isPlaying}
-        onStart={play}
+        onStart={() => {
+          play();
+          fireTrackingPixel(startTrackingPixel);
+        }}
+        onEnded={() => {
+          fireTrackingPixel(endTrackingPixel);
+        }}
         style={{ position: "relative" }}
         progressInterval={300}
         onProgress={({ playedSeconds }) => {
@@ -81,6 +94,11 @@ export default function VideoPlayer() {
         }}
         onSeek={(seconds) => {
           setEnterSpinCondition(seconds < 4);
+        }}
+        config={{
+          file: {
+            attributes: { controlslist: "nofullscreen" },
+          },
         }}
       ></ReactPlayer>
       {showSpinBtn ? (
@@ -101,7 +119,7 @@ export default function VideoPlayer() {
       )}
       {showDownloadBtn ? (
         <OverlayButton
-          text="Download now!"
+          text="Download now!!!"
           icon={GetAppIcon}
           onclick={() => {
             if (isIOS) {

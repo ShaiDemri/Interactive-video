@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 
 import * as serviceWorker from "./serviceWorker";
 import VideoPlayer from "./VideoPlayer";
+import FullScreen from "./FullScreen";
 
 ReactDOM.render(
   <React.StrictMode>
-    <VideoPlayer />
+    <FullScreen>
+      <VideoPlayer />
+    </FullScreen>
   </React.StrictMode>,
   document.getElementById("root")
 );
