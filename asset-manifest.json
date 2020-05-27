@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Interactive-video/static/js/main.cfde02b0.chunk.js",
-    "main.js.map": "/Interactive-video/static/js/main.cfde02b0.chunk.js.map",
+    "main.js": "/Interactive-video/static/js/main.a1f1db12.chunk.js",
+    "main.js.map": "/Interactive-video/static/js/main.a1f1db12.chunk.js.map",
     "runtime-main.js": "/Interactive-video/static/js/runtime-main.ad4eb05f.js",
     "runtime-main.js.map": "/Interactive-video/static/js/runtime-main.ad4eb05f.js.map",
     "static/js/2.d2bd6788.chunk.js": "/Interactive-video/static/js/2.d2bd6788.chunk.js",
@@ -31,7 +31,7 @@
     "static/js/14.ca7cfdfa.chunk.js": "/Interactive-video/static/js/14.ca7cfdfa.chunk.js",
     "static/js/14.ca7cfdfa.chunk.js.map": "/Interactive-video/static/js/14.ca7cfdfa.chunk.js.map",
     "index.html": "/Interactive-video/index.html",
-    "precache-manifest.254827d15679c588de50283b7402cf1e.js": "/Interactive-video/precache-manifest.254827d15679c588de50283b7402cf1e.js",
+    "precache-manifest.9c351171964f3c5110a3cf52062da4f4.js": "/Interactive-video/precache-manifest.9c351171964f3c5110a3cf52062da4f4.js",
     "service-worker.js": "/Interactive-video/service-worker.js",
     "static/js/2.d2bd6788.chunk.js.LICENSE.txt": "/Interactive-video/static/js/2.d2bd6788.chunk.js.LICENSE.txt",
     "static/media/billionaire_v2.mp4": "/Interactive-video/static/media/billionaire_v2.f91824c5.mp4"
@@ -39,6 +39,6 @@
   "entrypoints": [
     "static/js/runtime-main.ad4eb05f.js",
     "static/js/2.d2bd6788.chunk.js",
-    "static/js/main.cfde02b0.chunk.js"
+    "static/js/main.a1f1db12.chunk.js"
   ]
 }
