@@ -16,9 +16,7 @@ const FullScreen = ({ children }) => {
       document.mozFullScreenElement ||
       document.webkitFullscreenElement ||
       document.msFullscreenElement;
-    if (fullscreenElement) {
-      //exitFullscreen();
-    } else {
+    if (!fullscreenElement) {
       launchIntoFullscreen(document.getElementById("fullscreen"));
     }
   }
