@@ -10,16 +10,6 @@ const useStyles = makeStyles((theme) => ({
 const FullScreen = ({ children }) => {
   const classes = useStyles();
 
-  function goFullScreen() {
-    var fullscreenElement =
-      document.fullscreenElement ||
-      document.mozFullScreenElement ||
-      document.webkitFullscreenElement ||
-      document.msFullscreenElement;
-    if (!fullscreenElement) {
-      launchIntoFullscreen(document.getElementById("fullscreen"));
-    }
-  }
   // From https://davidwalsh.name/fullscreen
   // Find the right method, call on correct element
   function launchIntoFullscreen(element) {
@@ -31,6 +21,17 @@ const FullScreen = ({ children }) => {
       element.webkitRequestFullscreen();
     } else if (element.msRequestFullscreen) {
       element.msRequestFullscreen();
+    }
+  }
+
+  function goFullScreen() {
+    var fullscreenElement =
+      document.fullscreenElement ||
+      document.mozFullScreenElement ||
+      document.webkitFullscreenElement ||
+      document.msFullscreenElement;
+    if (!fullscreenElement) {
+      launchIntoFullscreen(document.getElementById("fullscreen"));
     }
   }
 
